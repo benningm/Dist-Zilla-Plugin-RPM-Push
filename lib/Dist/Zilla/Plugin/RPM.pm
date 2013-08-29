@@ -241,6 +241,10 @@ In your dist.ini:
     spec_file = build/dist.spec
     sign = 1
     ignore_build_deps = 0
+
+    push_packages = 0
+    push_command = rhnpush -s
+    push_ignore_packages = .src.rpm$
     
 =head1 DESCRIPTION
 
@@ -283,6 +287,25 @@ If set to a true value, rpmbuild will be called with the --sign option.
 =item ignore_build_deps (default: False)
 
 If set to a true value, rpmbuild will be called with the --nodeps option.
+
+=back
+
+=item push_packages (default: false)
+
+This allowes you to specify a command to push your generated RPM packages to a repository.
+RPM filenames are writen one-per-line to stdin.
+
+=back
+
+=item push_command (default: rhnpush -s)
+
+Command used to push packages.
+
+=back
+
+=item push_ignore_packages (default: .src.rpm$)
+
+A regular expression for packages which should NOT be pushed.
 
 =back
 
