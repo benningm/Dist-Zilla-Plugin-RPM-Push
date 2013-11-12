@@ -1,5 +1,5 @@
-package Dist::Zilla::Plugin::RPM;
-# ABSTRACT: Build an RPM from your Dist::Zilla release
+package Dist::Zilla::Plugin::RPM::Push;
+# ABSTRACT: Dist::Zilla plugin to build RPMs and push them into a repository
 
 use Moose;
 use Moose::Autobox;
@@ -250,6 +250,8 @@ In your dist.ini:
 
 This plugin is a Releaser for Dist::Zilla that builds an RPM of your
 distribution.
+It keeps track of build RPM files and can be used to push generated
+packages into a repository.
 
 =head1 ATTRIBUTES
 
