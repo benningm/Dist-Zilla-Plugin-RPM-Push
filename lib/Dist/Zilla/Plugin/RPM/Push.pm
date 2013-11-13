@@ -237,7 +237,7 @@ __PACKAGE__->meta->make_immutable;
 
 In your dist.ini:
 
-    [RPM]
+    [RPM::Push]
     spec_file = build/dist.spec
     sign = 1
     ignore_build_deps = 0
