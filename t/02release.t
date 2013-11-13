@@ -16,7 +16,7 @@ BEGIN {
 
 use Test::DZil qw(Builder simple_ini);
 
-local $ENV{DZIL_PLUGIN_RPM_TEST} = 1;
+local $ENV{DZIL_PLUGIN_RPM_PUSH_TEST} = 1;
 
 {
     my $tzil = Builder->from_config(
@@ -24,7 +24,7 @@ local $ENV{DZIL_PLUGIN_RPM_TEST} = 1;
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    'RPM'
+                    'RPM::Push'
                 ),
             },
         },
@@ -43,7 +43,7 @@ local $ENV{DZIL_PLUGIN_RPM_TEST} = 1;
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    ['RPM' => {
+                    ['RPM::Push' => {
                         sign => 1
                     }],
                 ),
@@ -64,7 +64,7 @@ local $ENV{DZIL_PLUGIN_RPM_TEST} = 1;
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    ['RPM' => {
+                    ['RPM::Push' => {
                         ignore_build_deps => 1
                     }],
                 ),
@@ -85,7 +85,7 @@ local $ENV{DZIL_PLUGIN_RPM_TEST} = 1;
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    ['RPM' => {
+                    ['RPM::Push' => {
                         build => 'source'
                     }],
                 ),

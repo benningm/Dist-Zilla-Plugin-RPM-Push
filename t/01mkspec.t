@@ -13,13 +13,13 @@ use Test::Differences;
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    'RPM'
+                    'RPM::Push'
                 ),
             },
         },
     );
 
-    my $spec = $tzil->plugin_named('RPM')->mk_spec(
+    my $spec = $tzil->plugin_named('RPM::Push')->mk_spec(
         sprintf('%s-%s.tar.gz',$tzil->name,$tzil->version)
     );
 
