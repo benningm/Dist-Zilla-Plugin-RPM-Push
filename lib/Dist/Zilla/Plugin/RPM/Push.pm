@@ -152,7 +152,7 @@ sub release {
     system('cp',$archive,$self->_sourcedir)
         && $self->log_fatal('cp failed');
 
-    if ($ENV{DZIL_PLUGIN_RPM_TEST}) {
+    if ($ENV{DZIL_PLUGIN_RPM_PUSH_TEST}) {
         $self->log("test: would have executed ".join(' ', @{$self->_rpmbuild_command}));
 	return;
     }
