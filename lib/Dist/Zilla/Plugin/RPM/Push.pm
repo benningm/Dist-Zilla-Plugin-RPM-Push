@@ -233,6 +233,10 @@ sub mk_spec {
 
 __PACKAGE__->meta->make_immutable;
 
+=head1 NAME
+
+Dist::Zilla::Plugin::RPM::Push - Dist::Zilla plugin to build RPMs and push them into a repository
+
 =head1 SYNOPSIS
 
 In your dist.ini:
