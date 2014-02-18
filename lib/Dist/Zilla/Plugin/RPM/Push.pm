@@ -149,6 +149,10 @@ sub release {
 
     $self->_write_spec($archive);
 
+    if(! -f $archive ) {
+	    $self->log_fatal('archive '.$archive.' does not exist!');
+    }
+
     system('cp',$archive,$self->_sourcedir)
         && $self->log_fatal('cp failed');
 
